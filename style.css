@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box ;
+    font-family:sans-serif;
+    overflow: hidden;
+}
+/* this style the body of the todoApp */
+.container{
+    max-width: 100%;
+    height: 100vh;
+    background: linear-gradient(200deg,rgb(234, 234, 234),#bebec8);
+    padding: 8px;
+    overflow: hidden;
+}
+/* this style the main container containing all divs in the todoAPP */
+.todo-task{
+width:100% ;
+max-width: 700px;
+margin: 20px auto  20px;
+background-color: rgb(207, 204, 199);
+padding: 10px 10px 30px;
+border-radius: 20px;
+user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}
+/* this style this main header of the todo showing "TO-DO" */
+.todo-task h1{
+   text-align: center;
+   margin:5px auto 10px;
+}
+/* this style the container , containing the addtodo button and the inputArea */
+.todo-input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#edeef0;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    box-shadow:-3px 4px 6px #4a4678 ;
+}
+/* this style the input space where you can type todo */
+.input-todo{
+    flex: 1;
+    margin: auto;
+    height: 40px;
+    border-radius: 10px;
+    background: transparent;
+    border:none;
+    outline:none;
+    padding: 15px;
+    font-size: 15px;
+}
+/* this style the addTodo button beside the input  */
+.todo-btn{
+   border: none;
+   outline: none;
+   padding: 15px 30px;
+   background-color:#4a4678 ;
+   border-radius: 50px;
+   cursor: pointer;
+   font-size: 15px;
+   color: #fff;
+   user-select: none;
+}
+/* this style the ul element the parentElement of this li */
+.todo-container {
+    overflow: auto;
+    max-height: 68vh; 
+}
+/* this style the list task in the todo */
+.todo-container li {
+    list-style: none;
+    font-size: 20px;
+    padding: 10px 30px 8px 30px;
+    overflow: auto;
+    background-color: #f3f1f1;
+    margin: 7px;
+    cursor: pointer;
+    border-radius: 20px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  /* Set all odd list items to a different color  */
+  .todo-container li:nth-child(even){
+    background: rgba(245, 222, 179, 0.5);
+  }
+  /* this draw line.through when ever you click on the li  */
+.todo-container li.checked{
+    text-decoration: line-through;
+    color: #413737;
+    background-color: rgb(218, 213, 213);
+}
+/* this add a checked mark when ever you click the li  */
+.todo-container li.checked::before {
+    content: "✔";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    width: 30px;
+    transform: translate(-50%, -50%);
+    color: green;
+    text-align: center;
+    animation: movechecked 4s linear   forwards;
+
+  }
+  @keyframes movechecked {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+  /* this style th "delete" button  */
+.todo-container li span {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: auto;
+    color:#4a4678;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+  }
+  /* .todo-container li.pinned {
+    background-color: lawngreen;
+    border:none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+  } */
